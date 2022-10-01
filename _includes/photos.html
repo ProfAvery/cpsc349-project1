@@ -19,8 +19,6 @@ site: CPSC 349 - Fall 2022 - Project 1
     <meta charset="utf-8">
     <meta name="description" content="My description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>My title</title>
 </head>
 
 <body>
@@ -30,34 +28,21 @@ site: CPSC 349 - Fall 2022 - Project 1
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="/aboutUs/index.html">About Us</a></li>
-                </li>
             </ul>
         </nav>
-        <h1>Page Heading with <i>Italics</i> and <u>Underline</u></h1>
-        <p>Page Subheading with <mark>highlighting</mark></p>
-        <br>
-        <p><a href="#"><i>Italic Link Button</i></a><a href="#"><b>Bold Link Button &rarr;</b></a></p>
     </header>
     <main>
-        <hr>
         <section>
             <header>
-                <h2>Section Heading</h2>
-                <p>Section Subheading</p>
+                <h2>Winter Landscapes</h2>
+                <p>Beautiful photos of the snow that looks pretty cool</p>
             </header>
-            <aside>
-                <h3>Card heading</h3>
-                <p>Card content*</p>
-                <p><small>*with small content</small></p>
-            </aside>
-            <aside>
-                <h3>Card heading</h3>
-                <p>Card content <sup>with notification</sup></p>
-            </aside>
-            <aside>
-                <h3>Card heading</h3>
-                <p>Card content</p>
-            </aside>
+            <ul>
+                {% for photo in Art.winterLandList.media -%}
+                    <img src= {{ photo.src.tiny }} />
+                {% endfor -%}
+            </ul>
+
         </section>
     </main>
     <footer>
